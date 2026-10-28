@@ -1,4 +1,5 @@
 # BDF Lab 1: Node.js and Express Server
+**Live Deployment:** https://bdf-labs-v85s.onrender.com/
 
 ## Student Details
 - **Name:** Lasya
@@ -31,6 +32,20 @@ To create an HTTP server using Node.js and build an Express server with multiple
    ```
 
 5. Open `http://localhost:3000` in your browser.
+## package.json Explanation
+
+- **name:** Identifies the project.
+- **version:** Specifies the project version.
+- **main:** Specifies the package entry point.
+- **scripts:** Defines commands such as `npm start`.
+- **dependencies:** Lists packages required by the application, including Express.
+- **devDependencies:** Lists packages used during development, if present.
+- **description:** Describes the project, if present.
+- **keywords:** Lists keywords associated with the package, if present.
+- **author:** Identifies the package author, if present.
+- **license:** Specifies the package license, if present.
+
+
 
 ## API Endpoints
 
