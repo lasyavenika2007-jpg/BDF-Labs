@@ -56,7 +56,7 @@ To create an HTTP server using Node.js and build an Express server with multiple
 ![404 route](screenshots/not-found.png)
 
 ## Deployment
-**Deployment status:** Not deployed yet.
+**Live Deployment:** https://bdf-labs-v85s.onrender.com/
 
 
 
