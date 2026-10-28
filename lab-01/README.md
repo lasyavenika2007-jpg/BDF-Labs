@@ -58,7 +58,7 @@ To create an HTTP server using Node.js and build an Express server with multiple
 ## Deployment
 **Deployment status:** Not deployed yet.
 
-If deployment is unavailable, provide Postman screenshots for all endpoints as required by the lab instructions.
+
 
 ## Environment Variables
 No environment variables are required for this lab.
