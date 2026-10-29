@@ -79,6 +79,6 @@ To create an HTTP server using Node.js and build an Express server with multiple
 No environment variables are required for this lab.
 
 ## Notes
-- `server.js` contains the Express server implementation.
-- `server-http.js` contains the basic Node.js HTTP server implementation.
-- `.gitignore` excludes `node_modules/` and `.env` from version control.
+- Resolved Node.js command recognition by restarting VS Code after installation.
+- Tested the server routes locally before deploying the application.
+- Deployed the Express server using Render.
