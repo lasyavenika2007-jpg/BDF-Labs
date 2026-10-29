@@ -6,8 +6,9 @@
 - **Section:** 113
 
 ## Live Link
-- **Deployment Status:** Not deployed yet.
-*(Lab 2 uses a local SQLite database file `books.db`. Once deployment to a cloud platform supporting persistent storage is configured, the live URL will be updated here.)*
+- **Deployment Status:** Deployed
+- **URL:** [https://bdf-labs-las-02.onrender.com/](https://bdf-labs-las-02.onrender.com/)
+- **Live Endpoint Example:** [https://bdf-labs-las-02.onrender.com/books/](https://bdf-labs-las-02.onrender.com/books/)
 
 ## Objective
 The objective of this lab is to connect an Express.js server to a SQLite relational database using the `sqlite` and `sqlite3` packages, and expose complete CRUD (Create, Read, Update, Delete) operations over RESTful HTTP routes using parameterized SQL queries.
@@ -18,6 +19,7 @@ The objective of this lab is to connect an Express.js server to a SQLite relatio
 - **SQLite3 & sqlite** (Database driver and async promise-based wrapper)
 - **Nodemon** (Development live-reload tool)
 - **Postman** (API testing client)
+- **Render** (Cloud deployment platform)
 
 ## Installation and Execution
 
@@ -114,6 +116,7 @@ CREATE TABLE IF NOT EXISTS book (
 1. **Asynchronous Initialization:** Connecting to SQLite is an I/O operation. If the Express server started listening before the database connection was established, incoming requests would encounter null database references. This was resolved by implementing `initializeDBAndServer()`, which awaits the database connection before calling `app.listen()`.
 2. **Preventing Accidental Database Resets:** The database setup is placed in `init-db.js` and `setup.sql`, ensuring that regular server restarts (via `nodemon`) do not overwrite modifications made by POST, PUT, or DELETE.
 3. **Input Validation:** For POST and PUT routes, missing or non-numeric values for `price` and `pages` are validated upfront to return a `400 Bad Request` before invoking SQL statements.
+4. **Render GLIBC Compatibility:** When deploying to Render, the precompiled native `sqlite3` binary targeted GLIBC 2.38, whereas Render's Linux runtime uses GLIBC 2.35. This was resolved by using `sqlite3@5.1.7` with `--build-from-source` on Linux via npm scripts, compiling the native addon directly against Render's host environment.
 
 ## Viva Preparation
 
